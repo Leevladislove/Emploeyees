@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %} Visits {% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+        <thead>
+        <th>ID</th>
+        <th>Employee</th>
+        <th>Date</th>
+        <th>Visited</th>
+        <th>Time visit start</th>
+        <th>Time visit end</th>
+        <th>Reason</th>
+        </thead>
+        <tbody>
+        {% for visit in visits %}
+        <tr>
+            <td>{{ visit.id }}</td>
+            <td>{{ visit.employee }}</td>
+            <td>{{ visit.date }}</td>
+            <td>{{ visit.visited }}</td>
+            <td>{{ visit.time_visit_start }}</td>
+            <td>{{ visit.time_visit_end }}</td>
+            <td>{{ visit.reason }}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{%endblock content%}
