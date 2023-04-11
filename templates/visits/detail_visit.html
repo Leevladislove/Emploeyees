@@ -1,37 +1,30 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
+{% block title %} Detail visit {% endblock title %}
 
-{%block content%}
-
-<h1>О сотруднике</h1>
+{% block content %}
+<h1>Визиты</h1>
 <div class="container_info">
-
     <div class="employee-info">
-        {% if employee.image %}
-        <img src="{{ employee.image.url }}">
-        {% else %}
-        <img src="#">
-        {% endif %}
         <div>
-            <p><strong>Имя:</strong> {{ employee.name }}</p>
-            <p><strong>Email:</strong> {{ employee.email }}</p>
-            <p><strong>Телефон:</strong> {{ employee.phone }}</p>
+            <p><strong>Сотрудник:</strong> {{ visits.employee }}</p>
+            <p><strong>Дата:</strong> {{ visits.date }}</p>
+            <p><strong>Причина:</strong> {{ visits.reason }}</p>
 
-            <a href="{% url 'edit'  employee.id  %}"
+            <a href="{% url 'edit_visit'  visits.id  %}"
                class="btn btn-primary btn-xs"
                data-title="Edit" data-toggle="modal"
                data-target="#edit">
                 <span class="glyphicon glyphicon-pencil"></span>
             </a>
-            <a href="{% url 'delete'  employee.id  %}"
+            <a href="{% url 'delete_visit'  visits.id  %}"
                class="btn btn-danger btn-xs"
                data-title="Delete"
                data-toggle="modal"
                data-target="#delete">
                 <span class="glyphicon glyphicon-trash"></span>
             </a>
-
         </div>
     </div>
 </div>
-{%endblock%}
+{% endblock %}

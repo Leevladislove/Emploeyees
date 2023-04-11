@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+
+from visits.models import Visit
 from .forms import EmployeeForm
 from .models import Employee
 
@@ -12,17 +14,17 @@ def add_new(request):
 
     else:
         form = EmployeeForm()
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'blog/index.html', {'form': form})
 
 
 def index(request):
     employees = Employee.objects.all()
-    return render(request, 'show.html', context={'employees': employees})
+    return render(request, 'blog/show.html', context={'employees': employees})
 
 
 def edit(request, id):
     employee = Employee.objects.get(id=id)
-    return render(request, 'edit.html', {'employee': employee})
+    return render(request, 'blog/edit.html', {'employee': employee})
 
 
 def update(request, id):
@@ -31,7 +33,7 @@ def update(request, id):
     if form.is_valid():
         form.save()
         return redirect(f'/detail/{id}')
-    return render(request, 'update.html', {'employee': employee})
+    return redirect(f'/detail/{id}')
 
 
 def destroy(request, id):
@@ -42,4 +44,6 @@ def destroy(request, id):
 
 def detail(request, id):
     employee = Employee.objects.get(id=id)
-    return render(request, 'detail.html', {'employee': employee})
+    visits = Visit.objects.filter(employee__id=id)
+    return render(request, 'blog/detail.html', {'employee': employee,  'visits': visits})
+

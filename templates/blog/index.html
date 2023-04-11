@@ -1,11 +1,9 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
 {% block title %}Add New Employee Records{% endblock title %}
 
 {% block content %}
 <div class="col-md-12">
-    <h4>Django CRUD (Create Read Update Delete) Example - Bootstrap Datatable GRID</h4>
-
     <form method="POST" class="post-form" enctype="multipart/form-data" action="{% url 'addnew' %}">
         {% csrf_token %}
         <div class="container">

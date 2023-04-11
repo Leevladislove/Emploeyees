@@ -1,10 +1,9 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
-{% block title %}Add New Employee {% endblock title %}
+{% block title %} Add New Employee {% endblock title %}
 
 {%block content%}
 <div class="col-md-12">
-    <h4>Django Crud</h4>
     <form method="POST" class="post-form" enctype="multipart/form-data" action="/update/{{employee.id}}">
         {% csrf_token%}
         <div class="container">
@@ -16,21 +15,21 @@
                 </div>
             </div>
             <div class="forum-group row">
-                <label class="col-sm-2 col-form-label">Employee ID: </label>
+                <label class="col-sm-2 col-form-label"> Employee ID: </label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" name="id" id="id_id" required maxlength="20"
                            value="{{employee.id}}"/>
                 </div>
             </div>
             <div class="forum-group row">
-                <label class="col-sm-2 col-form-label">Employee Name: </label>
+                <label class="col-sm-2 col-form-label"> Employee Name: </label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" name="name" id="id_name" required maxlength="100"
                            value="{{employee.name}}"/>
                 </div>
             </div>
             <div class="forum-group row">
-                <label class="col-sm-2 col-form-label">Employee Email: </label>
+                <label class="col-sm-2 col-form-label"> Employee Email: </label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" name="email" id="id_email" required maxlength="250"
                            value="{{employee.email}}"/>

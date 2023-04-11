@@ -17,7 +17,7 @@ def register(request):
             return redirect('/')
     else:
         form = SignUpForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'accounts/register.html', {'form': form})
 
 
 def logout_user(request):
@@ -36,4 +36,4 @@ def login_user(request):
         else:
             messages.error(request, 'Invalid username or password')
     form = LoginForm()
-    return render(request, 'registration/login.html', {'form': form})
+    return render(request, 'accounts/login.html', {'form': form})
