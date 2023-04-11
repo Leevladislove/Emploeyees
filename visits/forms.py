@@ -7,8 +7,8 @@ class VisitForm(forms.ModelForm):
         model = Visit
         fields = ('employee', 'date', 'time_visit_start', 'time_visit_end', 'reason')
         widgets = {
-            'date': forms.DateTimeInput(attrs={'type': 'date'}),
-            'time_visit_start': forms.TimeInput(attrs={'type': 'time'}),
-            'time_visit_end': forms.TimeInput(attrs={'type': 'time'}),
+            'date': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'time_visit_start': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),
+            'time_visit_end': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),
             'reason': forms.TextInput(attrs={'class': 'form-control'})
         }
