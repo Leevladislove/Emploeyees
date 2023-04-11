@@ -5,7 +5,7 @@ from .models import Visit
 class VisitForm(forms.ModelForm):
     class Meta:
         model = Visit
-        fields = ('employee', 'date', 'time_visit_start', 'time_visit_end', 'reason')
+        fields = ('employee', 'date', 'visited', 'time_visit_start', 'time_visit_end', 'reason')
         widgets = {
             'date': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'date'}),
             'time_visit_start': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),

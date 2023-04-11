@@ -15,45 +15,10 @@
                     <h3>Update Details</h3>
                 </div>
             </div>
+
             <div class="forum-group row">
-                <label class="col-sm-2 col-form-label"> Employee: </label>
                 <div class="col-sm-4">
-                    {{ form.employee }}
-                </div>
-            </div>
-            <div class="forum-group row">
-                <label class="col-sm-2 col-form-label"> Date: </label>
-                <div class="col-sm-4">
-                    <input type="date" class="form-control" name="date" required maxlength="250"
-                           value="{{ visits.date }}"/>
-                </div>
-            </div>
-            <div class="forum-group row">
-                <label class="col-sm-2 col-form-label"> Visited: </label>
-                <div class="col-sm-4">
-                    <input type="checkbox" class="form-control" name="visited" required maxlength="20"
-                           value="{{ visits.visited }}"/>
-                </div>
-            </div>
-            <div class="forum-group row">
-                <label class="col-sm-2 col-form-label"> Time visit start: </label>
-                <div class="col-sm-4">
-                    <input type="time" class="form-control" name="time_visit_start" required maxlength="20"
-                           value="{{ visits.time_visit_start }}"/>
-                </div>
-            </div>
-             <div class="forum-group row">
-                <label class="col-sm-2 col-form-label"> Time visit end: </label>
-                <div class="col-sm-4">
-                    <input type="time" class="form-control" name="time_visit_end" required maxlength="20"
-                           value="{{ visits.time_visit_end }}"/>
-                </div>
-            </div>
-                <div class="forum-group row">
-                <label class="col-sm-2 col-form-label"> Reason: </label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" name="reason" required maxlength="20"
-                           value="{{ visits.reason }}"/>
+                {{ form.as_p }}
                 </div>
             </div>
 
@@ -63,6 +28,7 @@
                     <button type="submit" class="btn btn-success btn-lg">Update</button>
                 </div>
             </div>
+
         </div>
     </form>
 </div>
