@@ -11,10 +11,10 @@ def show_visit(request):
 
 def add_new_visit(request):
     if request.method == 'POST':
-        form = VisitForm(request.POST, request.FILES)
+        form = VisitForm(request.POST)
         if form.is_valid():
             instance = form.save()
-            return redirect(f'/visits/detail/{instance.id}')
+            return redirect('/visits/')
     else:
         form = VisitForm()
     return render(request, 'visits/index_visit.html', context={'form': form})
